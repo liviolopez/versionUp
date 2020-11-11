@@ -13,3 +13,15 @@ build
 
 # Local configuration file (sdk path, etc)
 local.properties
+
+# Keystore files
+*.jks
+!certs/*.jks
+keystore.properties
+
+# Application Packages Key files
+*.apk
+
+# Generated files
+bin/
+gen/

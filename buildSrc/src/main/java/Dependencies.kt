@@ -18,6 +18,10 @@ object Dep {
         const val coreKtx = "androidx.core:core-ktx:1.3.2"
         const val appcompat = "androidx.appcompat:appcompat:1.2.0"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+
+        const val _nav_version = "2.3.1"
+        const val navigation = "androidx.navigation:navigation-fragment-ktx:$_nav_version"
+        const val navigationUi = "androidx.navigation:navigation-ui-ktx:$_nav_version"
     }
 
     object Material {

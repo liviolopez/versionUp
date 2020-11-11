@@ -55,6 +55,8 @@ dependencies {
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.AndroidX.appcompat)
     implementation(Dep.AndroidX.constraintlayout)
+    implementation(Dep.AndroidX.navigation)
+    implementation(Dep.AndroidX.navigationUi)
 
     implementation(Dep.Material.material)
 

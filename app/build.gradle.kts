@@ -5,12 +5,21 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Android.targetSdk)
+    compileSdkVersion(Sdk.compile)
+
+    signingConfigs {
+        register("release") {
+            storeFile = file("../certs/${KeyStore.storeFile}")
+            keyAlias = KeyStore.keyAlias
+            keyPassword = KeyStore.keyPassword
+            storePassword = KeyStore.storePassword
+        }
+    }
 
     defaultConfig {
         applicationId = "dev.all4.drinks"
-        minSdkVersion(Android.minSdk)
-        targetSdkVersion(Android.targetSdk)
+        minSdkVersion(Sdk.min)
+        targetSdkVersion(Sdk.target)
 
         versionCode = 1
         versionName = "1.0.0"
@@ -22,12 +31,20 @@ android {
         named("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
         }
 
         named("debug") {
             isDebuggable = true
         }
     }
+
+    compileOptions {
+        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions { jvmTarget = "1.8" }
 
     buildFeatures.dataBinding = true
 }

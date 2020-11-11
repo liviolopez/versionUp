@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="dev.all4.drinks.ui.MainFragment"
-        android:label="Drinks"
+        android:name="dev.all4.versionUp.ui.MainFragment"
+        android:label="versionUp"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_mainFragment_to_cocktailFragment"
-            app:destination="@id/cocktailFragment" />
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/cocktailFragment"
-        android:name="dev.all4.drinks.ui.CocktailFragment"
-        android:label="Cocktail"
-        tools:layout="@layout/fragment_cocktail" />
+        android:id="@+id/detailsFragment"
+        android:name="dev.all4.versionUp.ui.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details" />
 </navigation>

@@ -1,2 +1,2 @@
-rootProject.name = "Drinks"
+rootProject.name = "VersionUp"
 include("app")

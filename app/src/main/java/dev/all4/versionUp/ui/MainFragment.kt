@@ -1,4 +1,4 @@
-package dev.all4.drinks.ui
+package dev.all4.versionUp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -25,8 +25,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_cocktail.setOnClickListener {
-            findNavController().navigate(R.id.cocktailFragment)
+        btn_details.setOnClickListener {
+            findNavController().navigate(R.id.detailsFragment)
         }
     }
 }

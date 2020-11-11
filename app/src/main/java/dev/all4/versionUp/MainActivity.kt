@@ -1,4 +1,4 @@
-package dev.all4.drinks
+package dev.all4.versionUp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

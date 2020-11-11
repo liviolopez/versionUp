@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="dev.all4.drinks.ui.MainFragment"
+    tools:context="dev.all4.versionUp.ui.MainFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,10 +13,10 @@
         android:gravity="center"/>
 
     <Button
-        android:id="@+id/btn_cocktail"
+        android:id="@+id/btn_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="go to cocktail"/>
+        android:text="go to details"/>
 
 </LinearLayout>

@@ -17,7 +17,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "dev.all4.drinks"
+        applicationId = "dev.all4.versionUp"
         minSdkVersion(Sdk.min)
         targetSdkVersion(Sdk.target)
 

@@ -52,11 +52,14 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(Dep.Kotlin.kotlin)
+
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.AndroidX.appcompat)
     implementation(Dep.AndroidX.constraintlayout)
     implementation(Dep.AndroidX.navigation)
     implementation(Dep.AndroidX.navigationUi)
+    implementation(Dep.AndroidX.legacy)
 
     implementation(Dep.Material.material)
 

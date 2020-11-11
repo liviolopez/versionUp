@@ -14,10 +14,8 @@ build
 # Local configuration file (sdk path, etc)
 local.properties
 
-# Keystore files
-*.jks
-!certs/*.jks
-keystore.properties
+# Keystore properties
+KeyStore.kt
 
 # Application Packages Key files
 *.apk

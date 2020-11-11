@@ -1,2 +1,2 @@
-# Android Full Sample
-Android app - MVVM sample (working on)
+# Android Full Example
+Android app - example with the latest versions of all libraries

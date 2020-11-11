@@ -53,17 +53,28 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Dep.Kotlin.kotlin)
+    implementation(Dep.Material.material)
 
+    // ➡️ AndroidX
+    // Base
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.AndroidX.appcompat)
     implementation(Dep.AndroidX.constraintlayout)
-    implementation(Dep.AndroidX.navigation)
-    implementation(Dep.AndroidX.navigationUi)
     implementation(Dep.AndroidX.legacy)
 
-    implementation(Dep.Material.material)
+    // Navigation
+    implementation(Dep.AndroidX.navigation)
+    implementation(Dep.AndroidX.navigationUi)
 
+    // Lifecycle
+    implementation(Dep.AndroidX.lifecycleExt)
+    implementation(Dep.AndroidX.livedata)
+    implementation(Dep.AndroidX.viewmodel)
+    // ⬅️
+
+    // ➡️ Test
     testImplementation(Dep.Test.junit)
     androidTestImplementation(Dep.Test.extJunit)
     androidTestImplementation(Dep.Test.espressoCore)
+    // ⬅️
 }

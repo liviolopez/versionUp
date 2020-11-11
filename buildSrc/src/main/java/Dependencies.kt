@@ -20,9 +20,14 @@ object Dep {
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
         const val legacy = "androidx.legacy:legacy-support-v4:1.0.0"
 
-        const val _nav_version = "2.3.1"
-        const val navigation = "androidx.navigation:navigation-fragment-ktx:$_nav_version"
-        const val navigationUi = "androidx.navigation:navigation-ui-ktx:$_nav_version"
+        const val _navigation_version = "2.3.1"
+        const val navigation = "androidx.navigation:navigation-fragment-ktx:$_navigation_version"
+        const val navigationUi = "androidx.navigation:navigation-ui-ktx:$_navigation_version"
+
+        const val _lifecycle_version = "2.2.0"
+        const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:$_lifecycle_version"
+        const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$_lifecycle_version"
+        const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$_lifecycle_version"
     }
 
     object Material {

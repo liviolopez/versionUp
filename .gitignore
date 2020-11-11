@@ -15,7 +15,7 @@ build
 local.properties
 
 # Keystore properties
-KeyStore.kt
+buildSrc/src/main/java/KeyStore.kt
 
 # Application Packages Key files
 *.apk

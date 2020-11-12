@@ -55,8 +55,8 @@ dependencies {
 
     implementation(Dep.Kotlin.kotlin)
     implementation(Dep.Kotlin.coroutines)
-
     implementation(Dep.Material.material)
+    implementation(Dep.Main.gson)
 
     // ➡️ AndroidX
     // Base
@@ -73,6 +73,12 @@ dependencies {
     implementation(Dep.AndroidX.lifecycleExt)
     implementation(Dep.AndroidX.livedata)
     implementation(Dep.AndroidX.viewmodel)
+    // ⬅️
+
+    // ➡️ Retrofit
+    implementation(Dep.Retrofit.retrofit)
+    implementation(Dep.Retrofit.converter)
+    implementation(Dep.Retrofit.interceptor)
     // ⬅️
 
     // ➡️ Glide

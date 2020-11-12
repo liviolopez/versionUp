@@ -12,6 +12,7 @@ object Versions {
 object Dep {
     object Kotlin {
         const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3"
     }
 
     object AndroidX {
@@ -26,8 +27,8 @@ object Dep {
 
         const val _lifecycle_version = "2.2.0"
         const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:$_lifecycle_version"
-        const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$_lifecycle_version"
         const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$_lifecycle_version"
+        const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-beta01"
     }
 
     object Material {

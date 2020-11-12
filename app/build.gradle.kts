@@ -53,6 +53,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Dep.Kotlin.kotlin)
+    implementation(Dep.Kotlin.coroutines)
+
     implementation(Dep.Material.material)
 
     // ➡️ AndroidX

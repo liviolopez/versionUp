@@ -2,14 +2,14 @@ package dev.all4.versionUp.data
 
 import dev.all4.versionUp.data.model.Anything
 import dev.all4.versionUp.vo.Resource
+import dev.all4.versionUp.vo.RetrofitClient
 
 /**
  * Created by Livio Lopez on 11/11/20.
  */
 
 class DataSource {
-    fun getAnythingList() : Resource<List<Anything>> = fetchAnythingList
-
+    // Local Data
     val fetchAnythingList = Resource.Success(listOf(
                                 Anything(
                                     "https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg",
@@ -20,4 +20,8 @@ class DataSource {
                                     "Tree",
                                     "Trees are all plants and carry out the life processes that all plants share. However, trees are not actually a scientific group of their own. Trees may be cone-bearing plants (gymnosperms), flowering plants (angiosperms) or ferns.")
                             ))
+
+
+    // Retrofit - Food API
+    suspend fun fetchCategories() = Resource.Success(RetrofitClient.webService.getCategories().categories)
 }

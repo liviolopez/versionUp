@@ -2,6 +2,7 @@ package dev.all4.versionUp.domain
 
 import dev.all4.versionUp.data.DataSource
 import dev.all4.versionUp.data.model.Anything
+import dev.all4.versionUp.data.model.MealCategory
 import dev.all4.versionUp.vo.Resource
 
 /**
@@ -10,4 +11,6 @@ import dev.all4.versionUp.vo.Resource
 
 class RepositoryImpl(private val dataSource: DataSource): Repository {
     override fun getAnythingList(): Resource<List<Anything>> = dataSource.fetchAnythingList
+
+    override suspend fun getMealCategoryList(): Resource<List<MealCategory>> = dataSource.fetchCategories()
 }

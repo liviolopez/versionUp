@@ -1,6 +1,7 @@
 package dev.all4.versionUp.domain
 
 import dev.all4.versionUp.data.model.Anything
+import dev.all4.versionUp.data.model.MealCategory
 import dev.all4.versionUp.vo.Resource
 
 /**
@@ -8,4 +9,5 @@ import dev.all4.versionUp.vo.Resource
  */
 interface Repository {
     fun getAnythingList(): Resource<List<Anything>>
+    suspend fun getMealCategoryList(): Resource<List<MealCategory>>
 }

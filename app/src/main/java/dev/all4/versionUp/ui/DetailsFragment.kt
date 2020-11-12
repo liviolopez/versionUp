@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dev.all4.all4dev.R
+import dev.all4.versionUp.R
 
 class DetailsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {

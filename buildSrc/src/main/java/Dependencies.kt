@@ -31,6 +31,13 @@ object Dep {
         const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-beta01"
     }
 
+    object GlideImg {
+        const val _glide_version = "4.11.0"
+        const val glide = "com.github.bumptech.glide:glide:$_glide_version"
+        const val okhttp3 = "com.github.bumptech.glide:okhttp3-integration:$_glide_version"
+        const val compiler = "com.github.bumptech.glide:compiler:$_glide_version"
+    }
+
     object Material {
         const val material = "com.google.android.material:material:1.2.1"
     }

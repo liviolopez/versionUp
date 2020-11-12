@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
@@ -72,6 +73,12 @@ dependencies {
     implementation(Dep.AndroidX.lifecycleExt)
     implementation(Dep.AndroidX.livedata)
     implementation(Dep.AndroidX.viewmodel)
+    // ⬅️
+
+    // ➡️ Glide
+    implementation(Dep.GlideImg.glide)
+    implementation(Dep.GlideImg.okhttp3)
+    kapt(Dep.GlideImg.compiler)
     // ⬅️
 
     // ➡️ Test

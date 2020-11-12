@@ -15,7 +15,7 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
         try{
             emit(repository.getAnythingList())
         } catch (e: Throwable) {
-            emit(Resource.Exception<Nothing>(e))
+            emit(Resource.Failure<Nothing>(e))
         }
     }
 }

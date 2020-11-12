@@ -18,4 +18,13 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
             emit(Resource.Failure<Nothing>(e))
         }
     }
+
+    val liveDataMealCategory = liveData(Dispatchers.IO) {
+        emit(Resource.Loading(true))
+        try{
+            emit(repository.getMealCategoryList())
+        } catch (e: Throwable) {
+            emit(Resource.Failure<Nothing>(e))
+        }
+    }
 }

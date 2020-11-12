@@ -56,22 +56,24 @@
         android:layout_marginVertical="5dp"/>
 
     <!-- ➡️ Local Source-->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Anything data fetched from Local Source"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/title"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list_anything"
             android:layout_width="match_parent"
             android:layout_height="250dp"/>
 
-    </RelativeLayout>
+    </LinearLayout>
     <!-- ⬅️ Local Source-->
 
     <View
@@ -81,21 +83,23 @@
         android:layout_marginVertical="5dp"/>
 
     <!-- ➡️ API - Retrofit source -->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Food data fetched from API with Retrofit"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/title"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list_meal_categories"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </RelativeLayout>
+    </LinearLayout>
     <!-- ⬅️ API - Retrofit source -->
 
 </LinearLayout>

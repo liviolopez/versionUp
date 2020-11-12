@@ -9,7 +9,7 @@ import dev.all4.versionUp.R
 import dev.all4.versionUp.base.BaseViewHolder
 import dev.all4.versionUp.data.model.MealCategory
 import dev.all4.versionUp.utils.extentions.setImage
-import kotlinx.android.synthetic.main.row_anything.view.*
+import kotlinx.android.synthetic.main.row_vertical.view.*
 
 /**
  * Created by Livio Lopez on 11/12/20.
@@ -25,7 +25,7 @@ class MealAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return MealCategoryViewHolder(LayoutInflater.from(context).inflate(R.layout.row_anything, parent, false))
+        return MealCategoryViewHolder(LayoutInflater.from(context).inflate(R.layout.row_horizontal, parent, false))
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {

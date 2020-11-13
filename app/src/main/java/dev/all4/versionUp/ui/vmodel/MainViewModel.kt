@@ -1,7 +1,6 @@
 package dev.all4.versionUp.ui.vmodel
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.lifecycle.*
 import dev.all4.versionUp.domain.Repository
 import dev.all4.versionUp.vo.Resource
 import kotlinx.coroutines.Dispatchers
@@ -25,6 +24,39 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
             emit(repository.getMealCategoryList())
         } catch (e: Throwable) {
             emit(Resource.Failure<Nothing>(e))
+        }
+    }
+
+    fun liveDataMealsByCategory(mealCategoryName: String) = liveData(Dispatchers.IO) {
+        emit(Resource.Loading(true))
+        try{
+            emit(repository.getMealsByCategory(mealCategoryName))
+        } catch (e: Throwable) {
+            emit(Resource.Failure<Nothing>(e))
+        }
+    }
+
+    fun liveDataMeal(mealId: String) = liveData(Dispatchers.IO) {
+        emit(Resource.Loading(true))
+        try{
+            emit(repository.getMeal(mealId))
+        } catch (e: Throwable) {
+            emit(Resource.Failure<Nothing>(e))
+        }
+    }
+
+    // Search Live Data
+    private var mealNameQuery = MutableLiveData<String>()
+    fun searchMeal(query: String) { mealNameQuery.value = query }
+
+    val liveDataMealsByName = mealNameQuery.distinctUntilChanged().switchMap { query ->
+        liveData(Dispatchers.IO) {
+            emit(Resource.Loading(true))
+            try {
+                emit(repository.getMealsByName(query))
+            } catch (e: Throwable) {
+                emit(Resource.Failure<Nothing>(e))
+            }
         }
     }
 }

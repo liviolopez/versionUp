@@ -27,5 +27,19 @@ class DataSource {
 
 
     // Retrofit - Food API
-    suspend fun fetchCategories() = Resource.Success(RetrofitClient.webService.getCategories().categories)
+    suspend fun fetchCategories() = Resource.Success(
+        RetrofitClient.webService.getCategories().categories
+    )
+
+    suspend fun fetchMealsByCategory(mealCategoryName: String) = Resource.Success(
+        RetrofitClient.webService.getMealsByCategory(mealCategoryName).meals
+    )
+
+    suspend fun fetchMealsByName(mealNameQuery: String) = Resource.Success(
+        RetrofitClient.webService.getMealsByName(mealNameQuery).meals
+    )
+
+    suspend fun fetchMealById(mealId: String) = Resource.Success(
+        RetrofitClient.webService.getMealById(mealId).meals.firstOrNull()
+    )
 }

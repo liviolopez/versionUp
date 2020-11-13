@@ -27,3 +27,23 @@ data class MealCategory(
     @SerializedName("strCategoryThumb")
     val thumbnail: String = ""
 ): Parcelable
+
+data class MealsList(
+    @SerializedName("meals")
+    val meals: List<Meal>
+)
+
+@Parcelize
+data class Meal(
+    @SerializedName("idMeal")
+    val id: String = "",
+
+    @SerializedName("strMeal")
+    val name: String = "",
+
+    @SerializedName("strInstructions")
+    val description: String = "",
+
+    @SerializedName("strMealThumb")
+    val thumbnail: String = ""
+): Parcelable

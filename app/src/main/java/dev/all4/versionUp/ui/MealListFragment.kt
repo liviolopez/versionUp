@@ -90,6 +90,6 @@ class MealListFragment : Fragment(), MealAdapter.OnMealClickListener {
     override fun onMealClick(meal: Meal) {
         val bundle = Bundle()
         bundle.putParcelable("details", meal)
-        findNavController().navigate(R.id.detailsFragment, bundle)
+        findNavController().navigate(R.id.action_mealListFragment_to_detailsFragment, bundle)
     }
 }

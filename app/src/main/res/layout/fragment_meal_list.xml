@@ -85,13 +85,6 @@
         android:layout_marginVertical="5dp"
         android:background="@color/black" />
 
-    <SearchView
-        android:id="@+id/search_meal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray"
-        android:layout_marginBottom="5dp"/>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

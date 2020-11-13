@@ -61,7 +61,7 @@ class MainFragment : Fragment(), MainAdapter.OnAnythingClickListener, MealCatego
 
     // Basic
     private fun setupDefaultView(){
-        btn_about.setOnClickListener { findNavController().navigate(R.id.aboutFragment) }
+        btn_about.setOnClickListener { findNavController().navigate(R.id.action_mainFragment_to_aboutFragment) }
     }
 
     // Anything
@@ -94,7 +94,7 @@ class MainFragment : Fragment(), MainAdapter.OnAnythingClickListener, MealCatego
     override fun onAnythingClick(anything: Anything) {
         val bundle = Bundle()
         bundle.putParcelable("details", anything)
-        findNavController().navigate(R.id.detailsFragment, bundle)
+        findNavController().navigate(R.id.action_mainFragment_to_detailsFragment, bundle)
     }
 
 
@@ -128,7 +128,7 @@ class MainFragment : Fragment(), MainAdapter.OnAnythingClickListener, MealCatego
     override fun onMealCategoryClick(mealCategory: MealCategory) {
         val bundle = Bundle()
         bundle.putParcelable("mealCategory", mealCategory)
-        findNavController().navigate(R.id.mealListFragment, bundle)
+        findNavController().navigate(R.id.action_mainFragment_to_mealListFragment, bundle)
     }
 
     // Meal and Search
@@ -172,6 +172,6 @@ class MainFragment : Fragment(), MainAdapter.OnAnythingClickListener, MealCatego
     override fun onMealClick(meal: Meal) {
         val bundle = Bundle()
         bundle.putParcelable("details", meal)
-        findNavController().navigate(R.id.detailsFragment, bundle)
+        findNavController().navigate(R.id.action_mainFragment_to_detailsFragment, bundle)
     }
 }

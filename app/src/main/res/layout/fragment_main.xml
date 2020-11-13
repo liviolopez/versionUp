@@ -1,25 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.MainFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:orientation="vertical">
+    tools:context=".ui.MainFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Main fragment" />
-
-    <Button
-        android:id="@+id/btn_about"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="go to About"/>
-
+    <!-- ➡️ Loading and Error-->
     <RelativeLayout
         android:id="@+id/progress_bar_container"
         android:layout_width="match_parent"
@@ -29,7 +15,7 @@
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 
@@ -43,13 +29,123 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/broken_url"/>
+            android:src="@drawable/broken_url" />
 
     </RelativeLayout>
+    <!-- ⬅️ Loading and Error-->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_anything"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Main fragment" />
+
+            <Button
+                android:id="@+id/btn_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="go to About" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="5dp"
+                android:background="@color/black" />
+
+            <!-- ➡️ Local Source-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Anything data fetched from Local Source"
+                    android:textColor="@color/title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list_anything"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp" />
+
+            </LinearLayout>
+            <!-- ⬅️ Local Source-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="5dp"
+                android:background="@color/black" />
+
+            <!-- ➡️ API - Retrofit source -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Food data fetched from API with Retrofit"
+                    android:textColor="@color/title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="MEAL CATEGORIES"
+                    android:textColor="@color/title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list_meal_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/black" />
+
+                <SearchView
+                    android:id="@+id/search_meal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="ALL MEALS"
+                    android:textColor="@color/title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_all_meals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <!-- ⬅️ API - Retrofit source -->
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

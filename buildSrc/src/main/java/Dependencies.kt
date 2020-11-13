@@ -15,6 +15,11 @@ object Dep {
         const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3"
     }
 
+    object Main {
+        const val gson = "com.google.code.gson:gson:2.8.6"
+        const val rxkotlin = "io.reactivex.rxjava3:rxkotlin:3.0.1"
+    }
+
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:1.3.2"
         const val appcompat = "androidx.appcompat:appcompat:1.2.0"
@@ -29,6 +34,13 @@ object Dep {
         const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:$_lifecycle_version"
         const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$_lifecycle_version"
         const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-beta01"
+    }
+
+    object Retrofit {
+        const val _retrofit_version = "2.9.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:$_retrofit_version"
+        const val converter = "com.squareup.retrofit2:converter-gson:$_retrofit_version"
+        const val interceptor = "com.squareup.okhttp3:logging-interceptor:4.9.0"
     }
 
     object GlideImg {

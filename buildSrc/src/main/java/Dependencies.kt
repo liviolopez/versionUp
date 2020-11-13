@@ -17,6 +17,7 @@ object Dep {
 
     object Main {
         const val gson = "com.google.code.gson:gson:2.8.6"
+        const val rxkotlin = "io.reactivex.rxjava3:rxkotlin:3.0.1"
     }
 
     object AndroidX {

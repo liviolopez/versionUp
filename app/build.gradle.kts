@@ -57,6 +57,7 @@ dependencies {
     implementation(Dep.Kotlin.coroutines)
     implementation(Dep.Material.material)
     implementation(Dep.Main.gson)
+    implementation(Dep.Main.rxkotlin)
 
     // ➡️ AndroidX
     // Base

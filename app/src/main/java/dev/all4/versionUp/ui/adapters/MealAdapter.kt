@@ -7,45 +7,44 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.all4.versionUp.R
 import dev.all4.versionUp.base.BaseViewHolder
-import dev.all4.versionUp.data.model.MealCategory
+import dev.all4.versionUp.data.model.Meal
 import dev.all4.versionUp.utils.extentions.setImage
-import kotlinx.android.synthetic.main.row_vertical.view.*
+import kotlinx.android.synthetic.main.row_grid.view.*
 
 /**
  * Created by Livio Lopez on 11/12/20.
  */
 class MealAdapter(
         private val context: Context,
-        private val mealCategoryList: List<MealCategory>,
-        private val categoryClickListener: OnMealClickListener
+        private val mealList: List<Meal>,
+        private val mealClickListener: OnMealClickListener
     ) : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     interface OnMealClickListener {
-        fun onMealCategoryClick(mealCategory: MealCategory)
+        fun onMealClick(meal: Meal)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return MealCategoryViewHolder(LayoutInflater.from(context).inflate(R.layout.row_horizontal, parent, false))
+        return MealViewHolder(LayoutInflater.from(context).inflate(R.layout.row_grid, parent, false))
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
         when(holder){
-            is MealCategoryViewHolder -> holder.bind(mealCategoryList[position], position)
+            is MealViewHolder -> holder.bind(mealList[position], position)
         }
     }
 
     override fun getItemCount(): Int {
-        return mealCategoryList.size
+        return mealList.size
     }
 
     // inner class to be destroy after destroy MainAdapter
-    inner class MealCategoryViewHolder(itemView: View) : BaseViewHolder<MealCategory>(itemView){
-        override fun bind(item: MealCategory, position: Int) {
+    inner class MealViewHolder(itemView: View) : BaseViewHolder<Meal>(itemView){
+        override fun bind(item: Meal, position: Int) {
             itemView.thumbnail.setImage(item.thumbnail)
             itemView.name.text = item.name
-            itemView.description.text = item.description
 
-            itemView.setOnClickListener { categoryClickListener.onMealCategoryClick(item) }
+            itemView.setOnClickListener { mealClickListener.onMealClick(item) }
         }
     }
 }

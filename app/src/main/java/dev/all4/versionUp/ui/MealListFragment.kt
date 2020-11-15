@@ -27,7 +27,8 @@ import kotlinx.android.synthetic.main.fragment_meal_list.*
 /**
  * Created by Livio Lopez on 11/12/20.
  */
-class MealListFragment : Fragment(), MealAdapter.OnMealClickListener {
+class MealListFragment : Fragment(R.layout.fragment_meal_list),
+    MealAdapter.OnMealClickListener {
     private lateinit var mealCategory: MealCategory
     private val viewModel by viewModels<MainViewModel> { VMFactory(RepositoryImpl(DataSource())) }
 
@@ -37,13 +38,6 @@ class MealListFragment : Fragment(), MealAdapter.OnMealClickListener {
         requireArguments().let {
             mealCategory = it.getParcelable("mealCategory")!!
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_meal_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

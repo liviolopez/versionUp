@@ -29,19 +29,11 @@ import dev.all4.versionUp.utils.extentions.toast
 import dev.all4.versionUp.vo.Resource
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment(), MainAdapter.OnAnythingClickListener, MealCategoryAdapter.OnMealCategoryClickListener, MealAdapter.OnMealClickListener {
+class MainFragment : Fragment(R.layout.fragment_main),
+    MainAdapter.OnAnythingClickListener,
+    MealCategoryAdapter.OnMealCategoryClickListener,
+    MealAdapter.OnMealClickListener {
     private val viewModel by viewModels<MainViewModel> { VMFactory(RepositoryImpl(DataSource())) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

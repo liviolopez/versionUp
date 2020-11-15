@@ -21,7 +21,7 @@ import dev.all4.versionUp.vo.Resource
 import kotlinx.android.synthetic.main.fragment_meal_list.*
 
 
-class DetailsFragment : Fragment() {
+class DetailsFragment : Fragment(R.layout.fragment_details) {
     private val viewModel by viewModels<MainViewModel> { VMFactory(RepositoryImpl(DataSource())) }
     private var details: Any? = null
 
@@ -31,14 +31,6 @@ class DetailsFragment : Fragment() {
         requireArguments().let {
             details = it.getParcelable("details")!!
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

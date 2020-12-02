@@ -1,12 +1,15 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("android.extensions")
+    kotlin("plugin.parcelize")
     kotlin("kapt")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
     compileSdkVersion(Sdk.compile)
+    buildToolsVersion = Sdk.buildTool
+    ndkVersion = Sdk.ndk
 
     signingConfigs {
         register("release") {
@@ -52,41 +55,7 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-
-    implementation(Dep.Kotlin.kotlin)
-    implementation(Dep.Kotlin.coroutines)
-    implementation(Dep.Material.material)
-    implementation(Dep.Main.gson)
-    implementation(Dep.Main.rxkotlin)
-
-    // ➡️ AndroidX
-    // Base
-    implementation(Dep.AndroidX.coreKtx)
-    implementation(Dep.AndroidX.appcompat)
-    implementation(Dep.AndroidX.constraintlayout)
-    implementation(Dep.AndroidX.legacy)
-
-    // Navigation
-    implementation(Dep.AndroidX.navigation)
-    implementation(Dep.AndroidX.navigationUi)
-
-    // Lifecycle
-    implementation(Dep.AndroidX.lifecycleExt)
-    implementation(Dep.AndroidX.livedata)
-    implementation(Dep.AndroidX.viewmodel)
-    // ⬅️
-
-    // ➡️ Retrofit
-    implementation(Dep.Retrofit.retrofit)
-    implementation(Dep.Retrofit.converter)
-    implementation(Dep.Retrofit.interceptor)
-    // ⬅️
-
-    // ➡️ Glide
-    implementation(Dep.GlideImg.glide)
-    implementation(Dep.GlideImg.okhttp3)
-    kapt(Dep.GlideImg.compiler)
-    // ⬅️
+    Dep.allLibs().forEach { (type, lib) -> if(type == "impl") implementation(lib) else kapt(lib) }
 
     // ➡️ Test
     testImplementation(Dep.Test.junit)

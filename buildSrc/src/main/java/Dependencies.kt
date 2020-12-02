@@ -35,7 +35,7 @@ object Dep {
     private const val kapt = "kapt"
 
     private object V {
-        const val coroutines = "1.3.9"
+        const val coroutines = "1.4.1"
         const val navigation = "2.3.2"
         const val lifecycle = "2.2.0"
         const val livedata = "2.3.0-beta01"
@@ -72,10 +72,10 @@ object Dep {
 
         "Lifecycle" to mapOf(
             impl to mapOf(
-                "lifecycleExt" to "androidx.lifecycle:lifecycle-extensions:${V.lifecycle}",
-                "viewmodel" to "androidx.lifecycle:lifecycle-viewmodel-ktx:${V.lifecycle}",
-                "livedata" to "androidx.lifecycle:lifecycle-livedata-ktx:${V.livedata}",
-                "runtime" to "androidx.lifecycle:lifecycle-runtime-ktx:${V.livedata}")
+            "lifecycleExt" to "androidx.lifecycle:lifecycle-extensions:${V.lifecycle}",
+            "viewmodel" to "androidx.lifecycle:lifecycle-viewmodel-ktx:${V.lifecycle}",
+            "livedata" to "androidx.lifecycle:lifecycle-livedata-ktx:${V.livedata}",
+            "runtime" to "androidx.lifecycle:lifecycle-runtime-ktx:${V.livedata}")
         ),
 
         "Retrofit" to mapOf(

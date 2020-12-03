@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.all4.versionUp.R
 import dev.all4.versionUp.base.BaseViewHolder
 import dev.all4.versionUp.data.model.Anything
+import dev.all4.versionUp.databinding.RowVerticalBinding
 import dev.all4.versionUp.utils.extentions.setImage
-import kotlinx.android.synthetic.main.row_vertical.view.*
 
 /**
  * Created by Livio Lopez on 11/12/20.
@@ -41,9 +41,11 @@ class MainAdapter(
     // inner class to be destroy after destroy MainAdapter
     inner class MainViewHolder(itemView: View) : BaseViewHolder<Anything>(itemView){
         override fun bind(item: Anything, position: Int) {
-            itemView.thumbnail.setImage(item.thumbnail)
-            itemView.name.text = item.name
-            itemView.description.text = item.description
+            val binding = RowVerticalBinding.bind(itemView)
+
+            binding.thumbnail.setImage(item.thumbnail)
+            binding.name.text = item.name
+            binding.description.text = item.description
 
             itemView.setOnClickListener { anythingClickListener.onAnythingClick(item) }
         }

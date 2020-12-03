@@ -1,7 +1,7 @@
 package dev.all4.versionUp.data.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * Created by Livio Lopez on 11/11/20.

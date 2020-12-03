@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.all4.versionUp.R
 import dev.all4.versionUp.base.BaseViewHolder
 import dev.all4.versionUp.data.model.Meal
+import dev.all4.versionUp.databinding.RowGridBinding
 import dev.all4.versionUp.utils.extentions.setImage
-import kotlinx.android.synthetic.main.row_grid.view.*
 
 /**
  * Created by Livio Lopez on 11/12/20.
@@ -41,8 +41,10 @@ class MealAdapter(
     // inner class to be destroy after destroy MainAdapter
     inner class MealViewHolder(itemView: View) : BaseViewHolder<Meal>(itemView){
         override fun bind(item: Meal, position: Int) {
-            itemView.thumbnail.setImage(item.thumbnail)
-            itemView.name.text = item.name
+            val binding = RowGridBinding.bind(itemView)
+
+            binding.thumbnail.setImage(item.thumbnail)
+            binding.name.text = item.name
 
             itemView.setOnClickListener { mealClickListener.onMealClick(item) }
         }

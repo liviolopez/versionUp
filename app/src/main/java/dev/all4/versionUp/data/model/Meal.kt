@@ -2,7 +2,7 @@ package dev.all4.versionUp.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * Created by Livio Lopez on 11/12/20.
